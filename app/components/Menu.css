@@ -1,0 +1,53 @@
+.NavigationMenuRoot {
+	position: relative;
+	display: flex;
+	justify-content: left;
+	width: 100%;
+	z-index: 1;
+	background-color: rgb(195, 195, 195);
+}
+
+.NavigationMenuList {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(195, 195, 195);
+	list-style: none;
+	margin: 0;
+  padding-inline-start: 0px;
+}
+
+.NavigationMenuTrigger,
+.NavigationMenuLink {
+	padding: 8px 12px;
+	outline: none;
+	user-select: none;
+	font-weight: 500;
+	line-height: 1;
+	font-size: 15px;
+  border: none;
+	background-color: rgb(195, 195, 195);
+}
+.NavigationMenuTrigger:focus,
+.NavigationMenuLink:focus {
+	background-color: hsl(232 95 57);
+  color: rgb(195, 195, 195);
+}
+.NavigationMenuTrigger:hover,
+.NavigationMenuLink:hover {
+	background-color: hsl(232 95 57);
+  color: rgb(195, 195, 195);
+}
+
+.NavigationMenuTrigger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2px;
+}
+
+.NavigationMenuLink {
+	display: block;
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 1;
+}

@@ -1,4 +1,6 @@
 import type { MetaFunction } from "@remix-run/cloudflare"
+import { Menu } from "../components/MainMenu"
+import "../styles.css"
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,5 +10,10 @@ export const meta: MetaFunction = () => {
 }
 
 export default function Index() {
-  return <div>hello</div>
+  return (
+    <div className="RootContainer">
+      <Menu />
+      <div className="StatusBar">Hello</div>
+    </div>
+  )
 }
