@@ -1,0 +1,23 @@
+.ListContainer {
+  margin: 8px;
+}
+
+.FriendList {
+	list-style: none;
+  width: 100%;
+  margin: 0;
+}
+
+.Friend {
+  display: flex;
+  text-align: center;
+  padding: 4px;
+  align-items: center;
+}
+
+.GuyIcon {
+  height: 16px;
+  width: 16px;
+  filter: grayscale(50%);
+  margin-right: 8px;
+}

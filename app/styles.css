@@ -1,9 +1,20 @@
+@font-face {
+  font-family: "w95fa";
+  src: url("/fonts/w95fa.woff"), url("/fonts/w95fa.woff2");
+}
+
+html,
+body {
+  font-family: "w95fa";
+}
+
 .RootContainer {
+  font-family: "w95fa";
   display: flex;
   flex-direction: column;
   min-height: 400px;
   background: linear-gradient(#ffffff, white) padding-box,
-  linear-gradient(to bottom, hsl(232 93.7 49.6), hsl(232 93.7 40)) border-box;
+    linear-gradient(to bottom, hsl(232 93.7 49.6), hsl(232 93.7 40)) border-box;
   border-radius: 4px;
   border-width: 30px 4px 4px;
   border-style: solid;
