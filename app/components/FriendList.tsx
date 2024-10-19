@@ -6,7 +6,22 @@ interface Friend {
   status: string
 }
 
-const imgUrl = `/guys/green.webp`
+const greenGuyUrl = `/guys/green.webp`
+const redGuyUrl = `/guys/red.webp`
+const yellowGuyUrl = `/guys/yellow.webp`
+
+const getUrl = (status: string) => {
+  switch (status) {
+    case "Online":
+      return greenGuyUrl
+    case "Offline":
+      return redGuyUrl
+    case "Away":
+      return yellowGuyUrl
+    default:
+      return greenGuyUrl
+  }
+}
 
 const FriendList = ({
   friends,
@@ -20,8 +35,13 @@ const FriendList = ({
       {listTitle}
       <ul className="FriendList">
         {friends.map((friend) => (
-          <li className="Friend" key={friend.id}>
-            <img src={imgUrl} alt="messenger guy" className="GuyIcon" />
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+          <li className="Friend" key={friend.id} tabIndex={0}>
+            <img
+              src={getUrl(friend.status)}
+              alt="messenger guy"
+              className="GuyIcon"
+            />
             {friend.displayName}
           </li>
         ))}

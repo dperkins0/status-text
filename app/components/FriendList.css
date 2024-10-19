@@ -3,21 +3,27 @@
 }
 
 .FriendList {
-	list-style: none;
-  width: 100%;
+  list-style: none;
   margin: 0;
 }
 
 .Friend {
   display: flex;
-  text-align: center;
+  text-align: left;
   padding: 4px;
   align-items: center;
+  border: 1px solid transparent;
+  width: fit-content;
+  cursor: default;
+}
+
+.Friend:focus {
+	background-color: hsl(232 95 57);
+  color: white;
 }
 
 .GuyIcon {
   height: 16px;
   width: 16px;
-  filter: grayscale(50%);
   margin-right: 8px;
 }
