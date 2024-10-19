@@ -1,4 +1,5 @@
 import "./FriendList.css"
+import { CaretUpIcon } from "@radix-ui/react-icons"
 
 interface Friend {
   id: string
@@ -32,7 +33,7 @@ const FriendList = ({
 }) => {
   return (
     <div className="ListContainer">
-      {listTitle}
+      <div className="Title"><CaretUpIcon /> {listTitle} ({friends.length})</div>
       <ul className="FriendList">
         {friends.map((friend) => (
           // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex

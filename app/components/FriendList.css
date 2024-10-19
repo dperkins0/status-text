@@ -2,6 +2,11 @@
   margin: 8px;
 }
 
+.Title {
+  font-weight: 600;
+  color: darkblue;
+}
+
 .FriendList {
   list-style: none;
   margin: 0;
