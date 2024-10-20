@@ -1,4 +1,7 @@
-import type { LinksFunction } from "@remix-run/cloudflare"
+import type {
+  LinksFunction,
+  MetaFunction,
+} from "@remix-run/cloudflare"
 import {
   Links,
   Meta,
@@ -8,7 +11,16 @@ import {
 } from "@remix-run/react"
 import "@radix-ui/themes/styles.css"
 import "./styles.css"
-import { Reset, Theme } from "@radix-ui/themes"
+import { Theme } from "@radix-ui/themes"
+import { Menu } from "./components/MainMenu"
+
+export const meta: MetaFunction = () => [
+  {
+    charSet: "utf-8",
+    title: "status text",
+    viewport: "width=device-width,initial-scale=1",
+  },
+]
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -25,24 +37,29 @@ export const links: LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <Reset>
-      <html lang="en">
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <Meta />
-          <Links />
-        </head>
-        <body>
-          <Theme>{children}</Theme>
-          <ScrollRestoration />
-          <Scripts />
-        </body>
-      </html>
-    </Reset>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Theme>
+          <div className="RootContainer">
+            <Menu />
+            {children}
+          </div>
+        </Theme>
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
   )
 }
 
-export default function App() {
+function App() {
   return <Outlet />
 }
+
+export default App
